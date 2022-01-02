@@ -3,6 +3,9 @@ import json
 
 
 def file_reader():
+    """
+    Reading the original file
+    """
     gap_file = []
     with open(f"cars.csv", "r", encoding="utf-8") as file:
         csv_reader = csv.reader(file, delimiter=";")
@@ -13,6 +16,9 @@ def file_reader():
 
 
 def file_processing(gap_file, country):
+    """
+    Working with a read file
+    """
     car_list = []
     for line in gap_file:
         if country in line:
@@ -22,6 +28,9 @@ def file_processing(gap_file, country):
 
 
 def file_write(fileformat, country, car_list):
+    """
+    Writing to files by country of origin
+    """
     with open(f"file{country}.{fileformat}", "w", encoding="utf-8") as file:
         for car in car_list:
             car_tuple = tuple(car)
