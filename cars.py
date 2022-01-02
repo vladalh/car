@@ -28,31 +28,9 @@ def file_write(fileformat, country, car_list):
             if fileformat == "txt":
                 car = " ".join(car) + "\n"
                 txt_file = file.write(car)
-            elif formatfile == "csv":
+            elif fileformat == "csv":
                 csv_file = csv.writer(file, dialect="excel")
                 csv_file.writerow(car_tuple)
-            elif formatfile == "json":
+            elif fileformat == "json":
                 json_file = json.dump(car_list, file, indent=4)
-
-
-formatfile_list = ["txt", "csv", "json"]
-
-country_list = ["US", "Europe", "Japan"]
-
-formatfile = input("Enter the file format for saving data: txt, csv or json: ")
-
-country = input("Enter the name of the car manufacturer: US, Europe or Japan ")
-
-if formatfile not in formatfile_list:
-    print("You entered the wrong file format")
-    exit(0)
-
-if country not in country_list:
-    print("You entered the wrong country of origin")
-    exit(0)
-
-
-file_write(formatfile, country, file_processing(file_reader(), country))
-
-# vladalh@mail.ru
 
