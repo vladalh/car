@@ -1,4 +1,4 @@
-from cars import file_write, file_processing, file_reader
+from cars import Working_file
 
 
 def main():
@@ -18,7 +18,8 @@ def main():
         print("You entered the wrong country of origin")
         exit(0)
 
-    file_write(formatfile, country, file_processing(file_reader(), country))
+    Working_file().file_write(formatfile, country, Working_file().file_processing(
+        Working_file().file_reader(), country))
 
 
 if __name__ == '__main__':
