@@ -2,7 +2,7 @@ import csv
 import json
 
 
-class Working_file():
+class Workingfile():
     """
     Reading a file, working with the data of the read file, and writing to the result file
     """
