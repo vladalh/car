@@ -27,8 +27,12 @@ cursor = conn.cursor()
 #                       "(name, mpg, cylinders, displacement, horsepower, "
 #                       "weight, acceleration, model, country) VALUES (?, ?, ?, ?, ?, ?, ?, ? ,?)", line)
 
+#cursor.execute("SELECT rowid, * FROM car")
 
-cursor.execute("SELECT rowid, * FROM car")
+#cursor.execute("SELECT * FROM car WHERE country = 'US'")
+#cursor.execute("SELECT * FROM car WHERE country = 'Japan'")
+#cursor.execute("SELECT * FROM car WHERE country = 'Europe'")
+
 items = cursor.fetchall()
 for item in items:
     print(item)
